@@ -2,6 +2,8 @@ backend:
   name: github
   repo: abdelrahmanrashad1998-coder/dr-ahmed-mazen-website
   branch: main
+  base_url: https://dr-ahmed-mazen.vercel.app
+  auth_endpoint: api/auth
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
