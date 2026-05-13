@@ -5,8 +5,10 @@ backend:
   base_url: https://dr-ahmed-mazen.vercel.app
   auth_endpoint: api/auth
 
-media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
+site_url: https://dr-ahmed-mazen.vercel.app
+display_url: https://dr-ahmed-mazen.vercel.app
+media_folder: "assets/before-after"
+public_folder: "/assets/before-after"
 
 collections:
   - name: "content"
