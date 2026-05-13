@@ -92,8 +92,21 @@
       if (!dotsWrap) return;
       const vis = getVisibleCount();
       const dotIndex = Math.floor(current / vis);
-      dotsWrap.querySelectorAll('.slide-dot').forEach((d, i) => {
+      const allDots = dotsWrap.querySelectorAll('.slide-dot');
+      const total = allDots.length;
+
+      // Sliding window logic: show max 4 dots around the active one
+      const maxVisible = 4;
+      let start = Math.max(0, Math.min(dotIndex - 1, total - maxVisible));
+      let end = start + maxVisible;
+
+      allDots.forEach((d, i) => {
         d.classList.toggle('active', i === dotIndex);
+        if (i >= start && i < end) {
+          d.classList.remove('hidden-dot');
+        } else {
+          d.classList.add('hidden-dot');
+        }
       });
     }
 

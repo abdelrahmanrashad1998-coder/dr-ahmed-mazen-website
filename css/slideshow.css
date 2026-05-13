@@ -141,7 +141,6 @@ html[data-lang="ar"] .slide-arrow-next svg { transform: scaleX(-1); }
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
   padding: 24px 0 32px;
   background: var(--dark-2);
 }
@@ -153,12 +152,22 @@ html[data-lang="ar"] .slide-arrow-next svg { transform: scaleX(-1); }
 .slide-dot {
   width: 8px;
   height: 8px;
+  margin: 0 4px;
   border-radius: 50%;
   background: var(--dark-3);
   border: 1px solid var(--gold-dim);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   flex-shrink: 0;
+}
+.slide-dot.hidden-dot {
+  width: 0;
+  height: 0;
+  margin: 0;
+  opacity: 0;
+  border-width: 0;
+  transform: scale(0);
+  pointer-events: none;
 }
 .slide-dot.active {
   background: var(--gold);
