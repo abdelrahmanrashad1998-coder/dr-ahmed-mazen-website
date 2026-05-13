@@ -1,0 +1,320 @@
+<h1>Dr. Ahmed Mazen — Website Project</h1>
+<h2>Who is the client?</h2>
+<p>Dr. Ahmed Mazen is one of Egypt's top aesthetic medicine specialists. He does <strong>non-surgical only</strong> cosmetic treatments — fillers, Botox, body contouring. No surgery, no anesthesia, immediate results. Patients come from Egypt, the Gulf, and North Africa.</p>
+<p><strong>Credentials:</strong></p>
+<ul>
+<li>Ain Shams University (Cairo)</li>
+<li>Member, American Society of Aesthetic Medicine</li>
+<li>Member, Afro-Asian Society of Aesthetic Medicine</li>
+<li>Featured in Al-Gomhuria and Al-Masry Al-Youm newspapers</li>
+</ul>
+<p><strong>Core philosophy (use in all copy):</strong></p>
+<blockquote>
+<p>الحفاظ على الملامح الطبيعية وتعبيرات الوجه — بدون تدخل جراحي — تجنب مخاطر التخدير — النتيجة فورية
+Preserve natural features and facial expressions — no surgery — no anesthesia risk — immediate results</p>
+</blockquote>
+<hr>
+<h2>Design System</h2>
+<h3>Colors (strict — never deviate)</h3>
+<pre><code class="language-css">--black:      #0A0A0A   /* primary background */
+--dark:       #111111
+--dark-2:     #1A1A1A   /* section alternates */
+--dark-3:     #222222   /* card backgrounds */
+--gold:       #C9A84C   /* primary accent, CTAs, icons */
+--gold-light: #E8C97A   /* hover states */
+--gold-dim:   #8A6F2E   /* borders, subtle accents */
+--off-white:  #F5F0E8   /* body text */
+--gray:       #888888   /* secondary text */
+--gray-light: #BBBBBB   /* descriptions */
+</code></pre>
+<h3>Fonts (loaded via Google Fonts in index.html)</h3>
+<ul>
+<li><strong>Arabic headings:</strong> Cairo, font-weight 700</li>
+<li><strong>English headings:</strong> Playfair Display, serif</li>
+<li><strong>Body (both):</strong> Cairo (AR) / Montserrat (EN)</li>
+<li><strong>Always</strong> use <code>html[data-lang=&quot;ar&quot;]</code> and <code>html[data-lang=&quot;en&quot;]</code> selectors for bilingual styles</li>
+</ul>
+<h3>Language / Directionality</h3>
+<ul>
+<li>Default: Arabic RTL (<code>dir=&quot;rtl&quot;</code>, <code>lang=&quot;ar&quot;</code>)</li>
+<li>Toggle: user switches to English LTR via <code>#langToggle</code> button</li>
+<li>Every piece of text needs BOTH:<pre><code class="language-html">&lt;span class=&quot;ar-text&quot;&gt;النص العربي&lt;/span&gt;
+&lt;span class=&quot;en-text&quot;&gt;English text&lt;/span&gt;
+</code></pre>
+</li>
+<li>CSS hides the inactive language:<pre><code class="language-css">html[data-lang=&quot;ar&quot;] .en-text { display: none; }
+html[data-lang=&quot;en&quot;] .ar-text { display: none; }
+</code></pre>
+</li>
+</ul>
+<hr>
+<h2>File Structure</h2>
+<pre><code>/
+├── index.html              ← Main homepage (complete)
+├── css/style.css           ← All styles (complete)
+├── js/main.js              ← Gallery, tabs, lightbox, lang toggle (complete)
+├── assets/
+│   ├── logo.jpeg           ← Gold &quot;AM&quot; monogram on black background
+│   ├── doctor.jpg          ← PLACEHOLDER — add Dr. Ahmed's portrait here
+│   └── before-after/
+│       └── result-01.jpg … result-21.jpg  ← All patient before/after images
+├── images/                 ← Original source images (keep, don't delete)
+├── blog/                   ← TODO: Arabic SEO blog articles
+│   └── index.html          ← Blog listing page
+├── services/               ← TODO: Individual service pages
+│   ├── filler-wajh.html
+│   ├── botox.html
+│   └── ...
+└── CLAUDE.md               ← This file
+</code></pre>
+<hr>
+<h2>Services (complete list — use exact Arabic/English)</h2>
+<h3>Face Fillers (فيلر الوجه)</h3>
+<table>
+<thead>
+<tr>
+<th>Arabic</th>
+<th>English</th>
+<th>Slug</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>فيلر شد الوجه</td>
+<td>Face Lift Filler</td>
+<td>filler-shad-alwajh</td>
+</tr>
+<tr>
+<td>جولاين الفك</td>
+<td>Jawline Filler</td>
+<td>jawline</td>
+</tr>
+<tr>
+<td>كونتور الخدود</td>
+<td>Cheek Contouring</td>
+<td>kontur-alkhdud</td>
+</tr>
+<tr>
+<td>فيلر الصدغين</td>
+<td>Temple Filler</td>
+<td>filler-alsadghein</td>
+</tr>
+<tr>
+<td>فيلر الشفايف</td>
+<td>Lip Filler</td>
+<td>filler-alshfayef</td>
+</tr>
+<tr>
+<td>فيلر الأنف</td>
+<td>Non-Surgical Rhinoplasty</td>
+<td>filler-alanf</td>
+</tr>
+<tr>
+<td>رفع الترهل</td>
+<td>Sagging Skin Lift</td>
+<td>raf-altarahal</td>
+</tr>
+<tr>
+<td>نضارة البشرة</td>
+<td>Skin Glow Treatment</td>
+<td>nadara</td>
+</tr>
+</tbody>
+</table>
+<h3>Botox (بوتكس)</h3>
+<table>
+<thead>
+<tr>
+<th>Arabic</th>
+<th>English</th>
+<th>Slug</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>بوتكس الجبهة</td>
+<td>Forehead Botox</td>
+<td>botox-jabha</td>
+</tr>
+<tr>
+<td>بوتكس الجز والصداع</td>
+<td>Bruxism &amp; Headache Botox</td>
+<td>botox-soda3</td>
+</tr>
+<tr>
+<td>بوتكس الرقبة</td>
+<td>Neck Botox</td>
+<td>botox-ragaba</td>
+</tr>
+<tr>
+<td>بوتكس الأنف</td>
+<td>Nose Botox</td>
+<td>botox-anf</td>
+</tr>
+<tr>
+<td>بوتكس التعرق</td>
+<td>Hyperhidrosis Botox</td>
+<td>botox-ta3arroq</td>
+</tr>
+<tr>
+<td>بوتكس فقرات الظهر</td>
+<td>Back Botox</td>
+<td>botox-dahr</td>
+</tr>
+</tbody>
+</table>
+<h3>Body Fillers (فيلر الجسم)</h3>
+<table>
+<thead>
+<tr>
+<th>Arabic</th>
+<th>English</th>
+<th>Slug</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>فيلر الأيدي</td>
+<td>Hand Filler</td>
+<td>filler-aydi</td>
+</tr>
+<tr>
+<td>فيلر الأرداف</td>
+<td>Buttocks Filler</td>
+<td>filler-ardaf</td>
+</tr>
+<tr>
+<td>فيلر الرجلين</td>
+<td>Leg Filler</td>
+<td>filler-reglen</td>
+</tr>
+<tr>
+<td>فيلر الجسم</td>
+<td>Body Filler</td>
+<td>filler-gesm</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Contact &amp; Social</h2>
+<ul>
+<li><strong>WhatsApp / Phone 1:</strong> +201274477111</li>
+<li><strong>Phone 2:</strong> +201200066601</li>
+<li><strong>WhatsApp link:</strong> <code>https://wa.me/201274477111</code></li>
+<li><strong>Location map:</strong> <code>https://maps.app.goo.gl/wDUqDdbH6VUvGsd98</code></li>
+<li><strong>Facebook:</strong> https://www.facebook.com/drahmedmazen.1</li>
+<li><strong>Instagram:</strong> https://www.instagram.com/drahmedmazen</li>
+<li><strong>TikTok:</strong> https://vm.tiktok.com/ZS9F9Q1wosPrP-Talxs/</li>
+<li><strong>YouTube:</strong> https://youtube.com/@ahmedmazen1</li>
+</ul>
+<hr>
+<h2>SEO Strategy</h2>
+<h3>Target keywords (primary — Arabic)</h3>
+<ul>
+<li>دكتور تجميل مصر</li>
+<li>دكتور أحمد مازن</li>
+<li>فيلر الوجه في مصر</li>
+<li>بوتكس في مصر</li>
+<li>شد الوجه بدون جراحة</li>
+<li>حقن الفيلر القاهرة</li>
+<li>طب التجميل غير جراحي</li>
+</ul>
+<h3>Target keywords (secondary — English)</h3>
+<ul>
+<li>aesthetic medicine egypt</li>
+<li>non surgical facelift cairo</li>
+<li>filler botox egypt</li>
+<li>dr ahmed mazen</li>
+</ul>
+<h3>Rules for every page:</h3>
+<ol>
+<li><code>&lt;title&gt;</code> format: <code>[Service Name] | دكتور أحمد مازن | Dr. Ahmed Mazen</code></li>
+<li><code>&lt;meta name=&quot;description&quot;&gt;</code> must be 150-160 chars, include Arabic keyword</li>
+<li>Every page needs Schema.org JSON-LD (Physician + MedicalProcedure for service pages)</li>
+<li>Every service page URL format: <code>/services/[slug]/</code> (e.g., <code>/services/filler-shad-alwajh/</code>)</li>
+<li>Internal links: every service page links back to homepage + related services</li>
+</ol>
+<h3>Blog article titles (high-priority — write these first)</h3>
+<ul>
+<li>&quot;أفضل دكتور فيلر في مصر&quot; → targets main search term</li>
+<li>&quot;فيلر الوجه: كل ما تحتاج معرفته&quot; → informational</li>
+<li>&quot;الفرق بين الفيلر والبوتكس&quot; → FAQ content</li>
+<li>&quot;شد الوجه بدون جراحة — هل هو آمن؟&quot; → trust-building</li>
+<li>&quot;نتائج فيلر الشفايف — تجارب حقيقية&quot; → social proof</li>
+</ul>
+<hr>
+<h2>Competitor References</h2>
+<h3>Epione Beverly Hills (epionebh.com) — International luxury standard</h3>
+<ul>
+<li>Structure: Hero → Philosophy → Services (mega-menu by body area) → Before/After → Reviews → CTA</li>
+<li>Key lesson: Organize services by body zone, not just a flat list</li>
+<li>Key lesson: Celebrity/social proof section converts well</li>
+</ul>
+<h3>Dr. Emad Farag (dr-emadfarag.com) — Egyptian market benchmark</h3>
+<ul>
+<li>Structure: WordPress, Arabic RTL, services dropdown, before/after, videos, blog</li>
+<li>Key lesson: WhatsApp is the primary booking CTA in Egypt</li>
+<li>Key lesson: 94 pages of Arabic SEO blog content = strong organic traffic</li>
+<li>Key lesson: Each service has its own dedicated page with keyword in URL</li>
+</ul>
+<hr>
+<h2>Coding Conventions</h2>
+<h3>HTML</h3>
+<ul>
+<li>Always include both <code>.ar-text</code> and <code>.en-text</code> spans for every visible string</li>
+<li>Section pattern: <code>&lt;section class=&quot;[name]&quot; id=&quot;[name]&quot;&gt;</code></li>
+<li>Use <code>loading=&quot;lazy&quot;</code> on all images below the fold</li>
+<li>All external links: <code>target=&quot;_blank&quot; rel=&quot;noopener&quot;</code></li>
+</ul>
+<h3>CSS</h3>
+<ul>
+<li>Use CSS variables for ALL colors — never hardcode hex values</li>
+<li>Mobile-first: base styles for mobile, <code>@media (min-width: 768px)</code> for desktop</li>
+<li>Hover animations: always use <code>transform: translateY(-4px)</code> + box-shadow</li>
+<li>Gold glow: <code>box-shadow: 0 0 30px rgba(201,168,76,0.15)</code></li>
+<li>Transitions: always <code>0.3s ease</code></li>
+</ul>
+<h3>JavaScript</h3>
+<ul>
+<li>No frameworks — vanilla JS only (the site is already framework-free)</li>
+<li>Use IntersectionObserver for reveal animations (already set up in main.js)</li>
+<li>Preserve language toggle logic — it uses <code>localStorage.setItem('lang', ...)</code></li>
+</ul>
+<h3>New service page template</h3>
+<p>Each service page should follow this structure:</p>
+<ol>
+<li>Same navbar as index.html</li>
+<li>Hero: service name + tagline (AR/EN)</li>
+<li>What is it? section (description)</li>
+<li>How it works (steps)</li>
+<li>Before/After section (show relevant images from assets/before-after/)</li>
+<li>FAQ section (good for SEO)</li>
+<li>CTA: WhatsApp booking</li>
+<li>Related services grid</li>
+<li>Same footer as index.html</li>
+</ol>
+<hr>
+<h2>What's Done ✅</h2>
+<ul>
+<li>[x] Homepage (index.html) — all sections complete</li>
+<li>[x] CSS design system (css/style.css)</li>
+<li>[x] JavaScript: gallery, lightbox, tabs, language toggle, scroll effects (js/main.js)</li>
+<li>[x] 21 before/after images normalized and ready</li>
+<li>[x] Logo asset</li>
+<li>[x] Git repo initialized and pushed to GitHub</li>
+<li>[x] <code>/services/</code> — 18 individual service pages generated (generate_pages.py)</li>
+<li>[x] Homepage service cards linked to service pages</li>
+<li>[x] CSS for generated service pages (css/service.css extended)</li>
+<li>[x] service.js FAQ accordion supports both .faq-question and .faq-q selectors</li>
+</ul>
+<h2>What's TODO 🔲</h2>
+<ul>
+<li>[ ] Add <code>assets/doctor.jpg</code> — portrait photo (JS auto-detects it)</li>
+<li>[ ] <code>/blog/</code> — Arabic SEO blog articles (5 high-priority titles in CLAUDE.md)</li>
+<li>[ ] Update canonical URL in <code>&lt;head&gt;</code> when real domain is confirmed</li>
+<li>[ ] Add Google Analytics / Google Tag Manager</li>
+<li>[ ] Add Google Maps embed in contact section</li>
+<li>[ ] Connect a booking/inquiry form (or Calendly embed)</li>
+<li>[ ] Add patient video testimonials section (YouTube embeds)</li>
+<li>[ ] Performance: convert JPEGs to WebP for faster load</li>
+</ul>

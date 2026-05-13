@@ -472,36 +472,20 @@
             <span class="press-label ar-text">تحدثت عنه وسائل الإعلام:</span>
             <span class="press-label en-text">Featured in the Press:</span>
             <div class="press-cards">
-              <a href="https://share.google/7jONl8BOYoq0Tg5Rw" target="_blank" rel="noopener" class="press-card">
+              {% for item in press.items %}
+              <a href="{{ item.link }}" target="_blank" rel="noopener" class="press-card">
                 <div class="press-card-header">
-                  <span class="press-badge">اليوم السابع</span>
+                  <span class="press-badge">{{ item.badge }}</span>
                   <span class="press-icon">↗</span>
                 </div>
                 <p class="press-brief">
-                  <span class="ar-text">د. أحمد مازن يكشف أحدث أسرار التجميل اللاجراحي ويوضح كيف يمكن الحصول على نتائج طبيعية.</span>
-                  <span class="en-text">Dr. Ahmed Mazen reveals the latest secrets in non-surgical aesthetics for natural, lasting results.</span>
+                  <span class="ar-text">{{ item.brief_ar }}</span>
+                  <span class="en-text">{{ item.brief_en }}</span>
                 </p>
               </a>
-              <a href="https://share.google/Nn4B6d77368IwrzdV" target="_blank" rel="noopener" class="press-card">
-                <div class="press-card-header">
-                  <span class="press-badge">بوابة الجمهورية</span>
-                  <span class="press-icon">↗</span>
-                </div>
-                <p class="press-brief">
-                  <span class="ar-text">سر إطلالة النجوم: د. أحمد مازن الخيار الأول للمشاهير لنتائج تجميل طبيعية بدون جراحة.</span>
-                  <span class="en-text">The secret behind celebrity looks: Dr. Ahmed Mazen is the top choice for stars seeking natural, non-surgical results.</span>
-                </p>
-              </a>
-              <a href="https://share.google/795bMmlH3jTfltJwe" target="_blank" rel="noopener" class="press-card">
-                <div class="press-card-header">
-                  <span class="press-badge">المصري اليوم</span>
-                  <span class="press-icon">↗</span>
-                </div>
-                <p class="press-brief">
-                  <span class="ar-text">كيفية إجراء عمليات «شد الوجه» دون تدخل جراحي واستعادة شباب البشرة طبيعياً.</span>
-                  <span class="en-text">How to perform non-surgical facelifts and naturally restore youthful skin.</span>
-                </p>
-              </a>
+              {% else %}
+                <!-- No press items -->
+              {% endfor %}
             </div>
           </div>
 

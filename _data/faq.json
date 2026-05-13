@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "q_ar": "متى تظهر نتائج الفيلر والبوتكس؟",
+      "q_en": "When do Filler and Botox results appear?",
+      "a_ar": "نتائج الفيلر فورية وتتحسن خلال أسبوعين، بينما يبدأ البوتكس بالظهور خلال ٣ إلى ٥ أيام وتكتمل النتيجة في اليوم الرابع عشر.",
+      "a_en": "Filler results are immediate and improve over two weeks. Botox begins to show within 3-5 days, with full results by day 14."
+    },
+    {
+      "q_ar": "هل الإجراءات مؤلمة؟",
+      "q_en": "Are the procedures painful?",
+      "a_ar": "نستخدم أحدث تقنيات التخدير الموضعي، والإبر المستخدمة دقيقة جداً، لذا فإن الإجراء مريح وشبه خالٍ من الألم.",
+      "a_en": "We use the latest topical anesthesia and extremely fine needles, making the procedure very comfortable and virtually painless."
+    },
+    {
+      "q_ar": "كم تدوم النتائج؟",
+      "q_en": "How long do the results last?",
+      "a_ar": "يدوم البوتكس عادة ٤-٦ أشهر، بينما يستمر الفيلر من ٩ أشهر إلى أكثر من عامين حسب نوع المادة ومنطقة الحقن.",
+      "a_en": "Botox typically lasts 4-6 months, while fillers can last from 9 months to over two years depending on the product and area treated."
+    }
+  ]
+}

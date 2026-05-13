@@ -1,0 +1,36 @@
+backend:
+  name: github
+  repo: abdelrahmanrashad1998-coder/dr-ahmed-mazen-website
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "content"
+    label: "Site Content"
+    files:
+      - label: "Press Features"
+        name: "press"
+        file: "_data/press.json"
+        fields:
+          - label: "Press Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Source Name", name: "badge", widget: "string"}
+              - {label: "URL Link", name: "link", widget: "string"}
+              - {label: "Arabic Summary", name: "brief_ar", widget: "text"}
+              - {label: "English Summary", name: "brief_en", widget: "text"}
+      - label: "FAQ Items"
+        name: "faq"
+        file: "_data/faq.json"
+        fields:
+          - label: "Questions"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Arabic Question", name: "q_ar", widget: "string"}
+              - {label: "English Question", name: "q_en", widget: "string"}
+              - {label: "Arabic Answer", name: "a_ar", widget: "text"}
+              - {label: "English Answer", name: "a_en", widget: "text"}

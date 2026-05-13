@@ -1,0 +1,37 @@
+<h1>Copilot Instructions — Dr. Ahmed Mazen Website</h1>
+<h2>Project Overview</h2>
+<p>Bilingual (Arabic RTL / English LTR) website for Dr. Ahmed Mazen, an Egyptian aesthetic medicine consultant. Non-surgical cosmetic treatments only. Luxury black &amp; gold brand.</p>
+<h2>Always read CLAUDE.md first</h2>
+<p>The full project brief, design system, services list, SEO strategy, coding conventions, and TODO list are in <code>/CLAUDE.md</code>. Load it before generating any code for this project.</p>
+<h2>Quick Rules</h2>
+<p><strong>Colors — never hardcode, always use CSS variables:</strong></p>
+<ul>
+<li>Background: <code>var(--black)</code> = <code>#0A0A0A</code></li>
+<li>Gold accent: <code>var(--gold)</code> = <code>#C9A84C</code></li>
+<li>Text: <code>var(--off-white)</code> = <code>#F5F0E8</code></li>
+</ul>
+<p><strong>Bilingual text — every visible string needs both:</strong></p>
+<pre><code class="language-html">&lt;span class=&quot;ar-text&quot;&gt;النص العربي&lt;/span&gt;
+&lt;span class=&quot;en-text&quot;&gt;English text&lt;/span&gt;
+</code></pre>
+<p><strong>Primary CTA is always WhatsApp:</strong></p>
+<pre><code class="language-html">&lt;a href=&quot;https://wa.me/201274477111&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;...&lt;/a&gt;
+</code></pre>
+<p><strong>No frameworks — vanilla HTML/CSS/JS only.</strong></p>
+<p><strong>Arabic is the primary language (RTL). English is secondary (LTR toggle).</strong></p>
+<h2>Key Files</h2>
+<ul>
+<li><code>index.html</code> — homepage, complete</li>
+<li><code>css/style.css</code> — full design system, complete</li>
+<li><code>js/main.js</code> — all interactivity, complete</li>
+<li><code>assets/logo.jpeg</code> — brand logo (gold on black)</li>
+<li><code>assets/before-after/result-01.jpg</code> … <code>result-21.jpg</code> — patient images</li>
+</ul>
+<h2>Next Tasks (priority order)</h2>
+<ol>
+<li>Create individual service pages in <code>/services/[slug]/index.html</code></li>
+<li>Create Arabic SEO blog articles in <code>/blog/[slug]/index.html</code></li>
+<li>Add Google Analytics snippet to all pages</li>
+<li>Convert images to WebP format</li>
+</ol>
+<p>See <code>CLAUDE.md</code> for complete service list with Arabic names, slugs, and page template structure.</p>
