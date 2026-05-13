@@ -1,0 +1,263 @@
+/* ============================================================
+   slideshow.css — Dr. Ahmed Mazen
+   Shared auto-advancing before/after banner
+   ============================================================ */
+
+/* ── Wrapper ───────────────────────────────────────────────── */
+.slideshow-section {
+  padding: 100px 0 0;
+  background: var(--dark-2);
+}
+
+.slideshow-section.service-slideshow-section {
+  padding: 80px 0 0;
+  background: var(--black);
+}
+
+/* ── Banner container ──────────────────────────────────────── */
+.slideshow-banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--black);
+  cursor: grab;
+  user-select: none;
+}
+.slideshow-banner:active { cursor: grabbing; }
+
+/* ── Track ─────────────────────────────────────────────────── */
+.slide-track {
+  display: flex;
+  /* Force LTR so translateX always moves left→right regardless of page dir.
+     This is the fix for black slides in Arabic RTL mode. */
+  direction: ltr;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+/* ── Individual slide ──────────────────────────────────────── */
+.slide {
+  flex: 0 0 calc(100% / 3);
+  padding: 6px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .slide { flex: 0 0 50%; }
+}
+@media (max-width: 540px) {
+  .slide { flex: 0 0 100%; }
+}
+
+.slide-inner {
+  position: relative;
+  aspect-ratio: 3/4;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--dark-3);
+  border: 1px solid rgba(201,168,76,0.1);
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+.slide-inner:hover {
+  border-color: rgba(201,168,76,0.4);
+}
+
+.slide-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+  pointer-events: none;
+}
+.slide-inner:hover img {
+  transform: scale(1.04);
+}
+
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 50%);
+  display: flex;
+  align-items: flex-end;
+  padding: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.slide-inner:hover .slide-overlay { opacity: 1; }
+
+.slide-overlay-icon {
+  width: 34px;
+  height: 34px;
+  background: rgba(201,168,76,0.2);
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+}
+.slide-overlay-icon svg { width: 16px; height: 16px; }
+
+/* ── Arrows ─────────────────────────────────────────────────── */
+.slide-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(10,10,10,0.75);
+  border: 1px solid var(--gold-dim);
+  color: var(--gold);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+.slide-arrow:hover {
+  background: var(--gold);
+  color: var(--black);
+  border-color: var(--gold);
+  transform: translateY(-50%) scale(1.1);
+}
+.slide-arrow svg { width: 18px; height: 18px; pointer-events: none; }
+
+.slide-arrow-prev { left: 16px; }
+.slide-arrow-next { right: 16px; }
+
+/* In RTL: swap positions AND flip icon direction */
+html[data-lang="ar"] .slide-arrow-prev { left: auto; right: 16px; }
+html[data-lang="ar"] .slide-arrow-next { right: auto; left: 16px; }
+html[data-lang="ar"] .slide-arrow-prev svg { transform: scaleX(-1); }
+html[data-lang="ar"] .slide-arrow-next svg { transform: scaleX(-1); }
+
+/* ── Dots ───────────────────────────────────────────────────── */
+.slide-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 0 32px;
+  background: var(--dark-2);
+}
+
+.slideshow-section.service-slideshow-section .slide-dots {
+  background: var(--black);
+}
+
+.slide-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--dark-3);
+  border: 1px solid var(--gold-dim);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+.slide-dot.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  transform: scale(1.3);
+}
+.slide-dot:hover:not(.active) {
+  background: var(--gold-dim);
+}
+
+/* ── Progress bar ───────────────────────────────────────────── */
+.slide-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: width linear;
+  z-index: 5;
+  opacity: 0.7;
+}
+
+/* ── Gallery CTA row (below banner) ───────────────────────── */
+.slideshow-cta-row {
+  text-align: center;
+  padding: 0 0 80px;
+  background: var(--dark-2);
+}
+.slideshow-section.service-slideshow-section .slideshow-cta-row {
+  background: var(--black);
+}
+
+/* ── Lightbox (shared, same as homepage) ───────────────────── */
+.ss-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.96);
+  z-index: 3000;
+  align-items: center;
+  justify-content: center;
+}
+.ss-lightbox.open { display: flex; }
+
+.ss-lightbox-img-wrap {
+  max-width: 92vw;
+  max-height: 90vh;
+  position: relative;
+}
+.ss-lightbox-img-wrap img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid var(--gold-dim);
+  display: block;
+}
+
+.ss-lb-btn {
+  position: absolute;
+  background: rgba(201,168,76,0.15);
+  color: var(--gold);
+  border: 1px solid rgba(201,168,76,0.4);
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+.ss-lb-btn:hover {
+  background: var(--gold);
+  color: var(--black);
+  border-color: var(--gold);
+}
+.ss-lb-close { top: -56px; right: 0; font-size: 1rem; }
+.ss-lb-prev  { left: -60px; top: 50%; transform: translateY(-50%); }
+.ss-lb-next  { right: -60px; top: 50%; transform: translateY(-50%); }
+
+@media (max-width: 640px) {
+  .ss-lb-prev { left: 8px; }
+  .ss-lb-next { right: 8px; }
+  .ss-lb-close { top: 12px; right: 12px; position: fixed; }
+}
+
+/* ── Paused state indicator ─────────────────────────────────── */
+.slideshow-banner.paused .slide-progress {
+  animation-play-state: paused;
+}
+
+/* ── Responsive tweaks ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  .slide-arrow { width: 38px; height: 38px; }
+  .slide-arrow-prev { left: 8px; }
+  .slide-arrow-next { right: 8px; }
+  html[data-lang="ar"] .slide-arrow-prev { left: auto; right: 8px; }
+  html[data-lang="ar"] .slide-arrow-next { right: auto; left: 8px; }
+}

@@ -1,0 +1,34 @@
+# Cursor Rules — Dr. Ahmed Mazen Website
+
+Always read CLAUDE.md before writing any code. It contains the full project brief.
+
+## Identity
+- Client: Dr. Ahmed Mazen, aesthetic medicine consultant, Cairo Egypt
+- Stack: Vanilla HTML + CSS + JS, no frameworks
+- Languages: Arabic (primary, RTL) + English (secondary, LTR toggle)
+
+## Design Rules
+- Background: #0A0A0A (black). Accent: #C9A84C (gold). Text: #F5F0E8 (off-white)
+- Use CSS variables only — never hardcode colors
+- Fonts: Cairo (Arabic), Playfair Display / Montserrat (English), loaded via Google Fonts
+
+## Code Rules
+- Every text string = `<span class="ar-text">...</span><span class="en-text">...</span>`
+- Primary CTA = WhatsApp link to https://wa.me/201274477111
+- All images use `loading="lazy"` below the fold
+- No jQuery, no React, no Vue — pure vanilla JS
+- Animations via CSS transitions (0.3s ease) and IntersectionObserver
+- Mobile-first CSS with breakpoints at 480px, 768px, 1024px
+
+## SEO Rules
+- Title format: `[Arabic Service Name] | دكتور أحمد مازن`
+- Meta description: 150-160 chars, include primary Arabic keyword
+- Each service page needs Schema.org MedicalProcedure JSON-LD
+- Internal links from every page back to homepage
+
+## New Pages
+When creating service pages, follow the template in CLAUDE.md:
+Hero → Description → How it works → Before/After → FAQ → CTA → Related services → Footer
+
+When creating blog articles, target Arabic search terms like:
+"أفضل دكتور فيلر في مصر", "شد الوجه بدون جراحة", "الفرق بين الفيلر والبوتكس"
