@@ -244,10 +244,10 @@ html[data-lang="ar"] .section-label { letter-spacing: 0; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../assets/doctor.jpg');
+  background-image: url('../assets/hero-bg.png');
   background-size: cover;
-  background-position: center top;
-  opacity: 0.4;
+  background-position: center;
+  opacity: 0.45;
 }
 .hero-bg::after {
   content: '';
@@ -255,7 +255,7 @@ html[data-lang="ar"] .section-label { letter-spacing: 0; }
   inset: 0;
   background:
     radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.15) 0%, transparent 60%),
-    linear-gradient(to bottom, transparent 40%, var(--black) 100%);
+    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(201,168,76,0.1) 0%, transparent 50%);
   mix-blend-mode: overlay;
 }
 
@@ -271,10 +271,12 @@ html[data-lang="ar"] .section-label { letter-spacing: 0; }
   margin-bottom: 40px;
 }
 .hero-logo {
-  width: min(220px, 50vw);
-  height: auto;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
   margin: 0 auto;
-  border-radius: var(--radius);
+  border-radius: 50%;
+  border: 2px solid rgba(201,168,76,0.5);
   box-shadow: var(--glow);
 }
 
