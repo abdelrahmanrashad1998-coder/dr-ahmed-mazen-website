@@ -279,6 +279,18 @@ html[data-lang="ar"] .section-label { letter-spacing: 0; }
   border: 2px solid rgba(201,168,76,0.5);
   box-shadow: var(--glow);
 }
+.hero-doctor-name {
+  color: var(--gold);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 16px;
+  letter-spacing: 0.05em;
+  font-family: var(--font-serif);
+}
+html[data-lang="ar"] .hero-doctor-name {
+  font-family: var(--font-ar);
+  letter-spacing: 0;
+}
 
 .hero-divider {
   width: 60px;
