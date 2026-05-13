@@ -244,9 +244,19 @@ html[data-lang="ar"] .section-label { letter-spacing: 0; }
 .hero-bg {
   position: absolute;
   inset: 0;
+  background-image: url('../assets/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.45;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(201,168,76,0.04) 0%, transparent 50%);
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(201,168,76,0.1) 0%, transparent 50%);
+  mix-blend-mode: overlay;
 }
 
 .hero-content {
