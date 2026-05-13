@@ -36,3 +36,13 @@ collections:
               - {label: "English Question", name: "q_en", widget: "string"}
               - {label: "Arabic Answer", name: "a_ar", widget: "text"}
               - {label: "English Answer", name: "a_en", widget: "text"}
+      - label: "Results Slideshow"
+        name: "results"
+        file: "_data/results.json"
+        fields:
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            fields:
+              - {label: "Image", name: "src", widget: "image"}
+              - {label: "Alt Text (Optional)", name: "alt", widget: "string", default: "نتيجة حقيقية"}

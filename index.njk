@@ -15,7 +15,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="دكتور أحمد مازن | استشاري طب التجميل" />
   <meta property="og:description" content="جمالك الطبيعي بدون جراحة – فيلر، بوتكس، شد الوجه. نتائج فورية وآمنة." />
-  <meta property="og:image" content="assets/logo.jpeg" />
+  <meta property="og:image" content="/assets/logo.jpeg" />
   <meta property="og:url" content="https://drahmedmazen.com/" />
 
   <!-- Twitter Card -->
@@ -72,7 +72,7 @@
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="#home" class="nav-logo">
-        <img src="assets/logo.jpeg" alt="Dr. Ahmed Mazen Logo" />
+        <img src="/assets/logo.jpeg" alt="Dr. Ahmed Mazen Logo" />
       </a>
       <div class="nav-right">
         <button class="lang-toggle" id="langToggle" aria-label="Switch Language">EN</button>
@@ -100,7 +100,7 @@
     <div class="hero-bg"></div>
     <div class="hero-content">
       <div class="hero-logo-wrap">
-        <img src="assets/doctor.jpg" alt="Dr. Ahmed Mazen" class="hero-logo" />
+        <img src="/assets/doctor.jpg" alt="Dr. Ahmed Mazen" class="hero-logo" />
         <div class="hero-doctor-name">
           <span class="ar-text">دكتور أحمد مازن</span>
           <span class="en-text">Dr. Ahmed Mazen</span>
@@ -416,7 +416,7 @@
         <div class="about-img-col">
           <div class="about-img-frame">
             <div class="about-img-placeholder">
-              <img src="assets/logo.jpeg" alt="Dr. Ahmed Mazen" class="about-logo-placeholder" />
+              <img src="/assets/logo.jpeg" alt="Dr. Ahmed Mazen" class="about-logo-placeholder" />
               <p class="placeholder-label">
                 <span class="ar-text">دكتور أحمد مازن</span>
                 <span class="en-text">Dr. Ahmed Mazen</span>
@@ -590,7 +590,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/logo.jpeg" alt="Dr. Ahmed Mazen" class="footer-logo" />
+          <img src="/assets/logo.jpeg" alt="Dr. Ahmed Mazen" class="footer-logo" />
           <p>
             <span class="ar-text">جمالك الطبيعي بلا جراحة</span>
             <span class="en-text">Your Natural Beauty, No Surgery</span>
@@ -652,29 +652,7 @@
           lbPrevId:    'homeLbPrev',
           lbNextId:    'homeLbNext',
           interval:    4000,
-          images: [
-            { src: 'assets/before-after/result-01.jpg', alt: 'نتيجة حقيقية' },
-            { src: 'assets/before-after/result-02.jpg', alt: 'نتيجة حقيقية' },
-            { src: 'assets/before-after/result-03.jpg', alt: 'نتيجة حقيقية' },
-            { src: 'assets/before-after/result-04.jpg', alt: 'نتيجة حقيقية' },
-            { src: 'assets/before-after/result-05.jpg', alt: 'نتيجة حقيقية' },
-            { src: 'assets/before-after/result-06.jpg', alt: 'نتيجة حقيقية' },
-            { src: 'assets/before-after/result-07.jpg', alt: 'نتيجة حقيقية' },
-            { src: 'assets/before-after/result-08.jpg', alt: 'نتيجة حقيقية' },
-            { src: 'assets/before-after/result-09.jpg', alt: 'نتيجة حقيقية' },
-            { src: 'assets/before-after/result-10.jpg', alt: 'نتيجة حقيقية' },
-            { src: 'assets/before-after/result-11.jpg', alt: 'نتيجة حقيقية' },
-            { src: 'assets/before-after/result-12.jpg', alt: 'نتيجة حقيقية' },
-            { src: 'assets/before-after/result-13.jpg', alt: 'نتيجة حقيقية' },
-            { src: 'assets/before-after/result-14.jpg', alt: 'نتيجة حقيقية' },
-            { src: 'assets/before-after/result-15.jpg', alt: 'نتيجة حقيقية' },
-            { src: 'assets/before-after/result-16.jpg', alt: 'نتيجة حقيقية' },
-            { src: 'assets/before-after/result-17.jpg', alt: 'نتيجة حقيقية' },
-            { src: 'assets/before-after/result-18.jpg', alt: 'نتيجة حقيقية' },
-            { src: 'assets/before-after/result-19.jpg', alt: 'نتيجة حقيقية' },
-            { src: 'assets/before-after/result-20.jpg', alt: 'نتيجة حقيقية' },
-            { src: 'assets/before-after/result-21.jpg', alt: 'نتيجة حقيقية' }
-          ]
+          images: {{ results.images | dump | safe }}
         });
       }
     });
