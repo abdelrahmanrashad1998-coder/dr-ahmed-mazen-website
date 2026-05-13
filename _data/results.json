@@ -83,6 +83,10 @@
     {
       "src": "/assets/before-after/result-20.jpg",
       "alt": "نتيجة حقيقية"
+    },
+    {
+      "alt": "نتيجة حقيقية",
+      "src": "/assets/before-after/logo.jpeg"
     }
   ]
 }
