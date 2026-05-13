@@ -46,7 +46,10 @@
   .slide { flex: 0 0 50%; }
 }
 @media (max-width: 540px) {
-  .slide { flex: 0 0 100%; }
+  .slide { 
+    flex: 0 0 100%; 
+    padding: 12px 24px;
+  }
 }
 
 .slide-inner {
